@@ -164,8 +164,9 @@ def display_info(stdscr, server_ip, server_port):
         stdscr.addstr(f"{board_pow.get('rtpow', 'N/A')}\n", curses.color_pair(1))
         stdscr.addstr(3, 2, "Average Hashrate: ", curses.color_pair(1))
         stdscr.addstr(f"{board_pow.get('avgpow', 'N/A')}\n", curses.color_pair(1))
-        stdscr.addstr(4, 2, "Rejected Shares: ", curses.color_pair(1))
-        stdscr.addstr(f"{board_pow.get('reject', 'N/A')}\n", curses.color_pair(get_color_for_rejected(board_pow.get('reject'))))
+        stdscr.addstr(4, 2, "Rejection Rate: ", curses.color_pair(1))
+        stdscr.addstr(f"{board_pow.get('reject', 'N/A')}", curses.color_pair(get_color_for_rejected(board_pow.get('reject'))))
+        stdscr.addstr("%\n", curses.color_pair(1))
         stdscr.addstr(5, 2, "Runtime: ", curses.color_pair(1))
         stdscr.addstr(f"{board_pow.get('runtime', 'N/A')}\n", curses.color_pair(1))
 
